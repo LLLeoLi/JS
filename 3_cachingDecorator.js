@@ -21,8 +21,8 @@ let worker = {
         alert("Called with " + x);
         return x * this.someMethod();
     },
-    max: function(x,y){
-        console.log("Called with "+(x>y?x:y));
+    max: function (x, y) {
+        console.log("Called with " + (x > y ? x : y));
     }
 };
 // worker.slow = cachingDecorator_1(worker.slow);
@@ -42,7 +42,7 @@ function cachingDecorator(func) {
     return function (...args) {
         let key = hash(args);
         if (cache.has(key)) {
-            console.log("key:",key);
+            console.log("key:", key);
             return cache.get(key);
         }
         // 两种写法都可以，用arguments也行
@@ -55,8 +55,8 @@ function cachingDecorator(func) {
 worker.slow = cachingDecorator(worker.slow);
 worker.max = cachingDecorator(worker.max);
 // worker.slow(5);
-worker.max(7,8);
-worker.max(7,8);
+worker.max(7, 8);
+worker.max(7, 8);
 /* 
     函数表达式在代码执行到达时被创建，并且仅从那一刻起可用。
     在函数声明被定义之前，它就可以被调用。

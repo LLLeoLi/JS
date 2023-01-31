@@ -20,5 +20,5 @@ let worker = {
         console.log(x);
     }
 }
-worker.f = delay(worker.f,1000);
+worker.f = delay(worker.f, 1000);
 worker.f("延时了1s");

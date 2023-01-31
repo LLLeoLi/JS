@@ -3,7 +3,7 @@ let i = 0;
 setTimeout(() => alert(i), 100); // ?
 
 // 假设这段代码的运行时间 >100ms
-for(let j = 0; j < 100000000; j++) {
+for (let j = 0; j < 100000000; j++) {
   i++;
 }
 
