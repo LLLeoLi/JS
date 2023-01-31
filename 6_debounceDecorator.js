@@ -7,7 +7,7 @@ function debounce(func, m) {
         timeout = setTimeout(() => func.apply(this, arguments), m);
     }
 }
-let f = debounce(alert, 1000);
+let f = debounce(console.log, 1000);
 
 f("a");
 setTimeout( () => f("b"), 200);

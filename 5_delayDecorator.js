@@ -17,7 +17,7 @@ function delay(func, m) {
 }
 let worker = {
     f(x) {
-        alert(x);
+        console.log(x);
     }
 }
 worker.f = delay(worker.f,1000);
