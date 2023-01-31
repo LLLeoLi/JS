@@ -1,0 +1,1 @@
+记录了学习JS过程中的从函数进阶内容开始的一些简单练习，顺序可基本参照https://zh.javascript.info。
