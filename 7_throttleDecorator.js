@@ -1,4 +1,16 @@
 /* LLLeo's comment: 节流装饰器返回的包装器每m毫秒最多调用func一次 */
+// 无缓存
+function easyThrottle(func, m){
+    let timer = null;
+    return function(...args){
+        if(timer) return;
+        timer = setTimeout(()=>{
+            func.apply(this, args);
+            timer = null;
+        },m)
+    }
+}
+// 有缓存
 function throttle(func, m) {
     let isReady = true;
     let savedThis, savedArgs;
@@ -31,9 +43,11 @@ function f(a) {
 
 // f1000 最多每 1000ms 将调用传递给 f 一次
 let f1000 = throttle(f, 1000);
+// let f1000 = easyThrottle(f,1000);
 
 f1000(1); // 显示 1
 f1000(2); // (节流，尚未到 1000ms)
 f1000(3); // (节流，尚未到 1000ms)
 f1000(4); // (节流，尚未到 1000ms)
-// 最终显示4
+
+// 有缓存，最终显示4

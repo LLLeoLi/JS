@@ -1,10 +1,10 @@
 /* LLLeo's comment: 为xox做的网站写的js脚本，SB wordpress，SB elementor */
 function counter(){
-    let items = document.querySelectorAll(".eael-filterable-gallery-item-wrap");
-    count = 0;
-    items.forEach((item)=>{
-       if(item.style.display === "none") count++;
-    })
+    let items = Array.from(document.querySelectorAll(".eael-filterable-gallery-item-wrap"));
+    let count = items.reduce((prev,item)=>{
+        if(item.style.display === "none") prev++;
+        return prev;
+    },0)
     console.log("LENGTH:",items.length);
     console.log("COUNT:",count);
 }

@@ -1,6 +1,6 @@
 /* LLLeo's comment: 此例包含DOM相关方法，无法在node环境中运行 */
 function loadJavascript(src){
-    let script = document.createElement("script") || {};
+    let script = document.createElement("script");
     return new Promise((resolve, reject) =>{
         script.src = src;
         script.onload = ()=> resolve(script);
