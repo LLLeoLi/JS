@@ -1,11 +1,11 @@
 /* LLLeo's comment: 手写Promise(只区分了异步，没有区分宏任务微任务)  */
 // 可以用class或构造函数实现，这里使用class
 class Commitment {
-    static PEDNING = "pedning";
+    static PENDING = "pending";
     static FULFILLED = "fulfilled";
     static REJECTED = "rejected";
     constructor(func) {
-        this.status = Commitment.PEDNING;
+        this.status = Commitment.PENDING;
         this.result = null;
         // 实现异步调用
         this.resolveCallbacks = [];
@@ -22,7 +22,7 @@ class Commitment {
     }
     resolve(result) {
         setTimeout(() => {
-            if (this.status === Commitment.PEDNING) {
+            if (this.status === Commitment.PENDING) {
                 this.status = Commitment.FULFILLED;
                 this.result = result;
                 this.resolveCallbacks.forEach(callback => {
@@ -33,7 +33,7 @@ class Commitment {
     }
     reject(result) {
         setTimeout(() => {
-            if (this.status === Commitment.PEDNING) {
+            if (this.status === Commitment.PENDING) {
                 this.status = Commitment.REJECTED;
                 this.result = result;
                 this.rejectCallbacks.forEach(callback => {
@@ -48,7 +48,7 @@ class Commitment {
             // 原生then方法支持传入非函数内容并忽略
             onFULFILLED = typeof onFULFILLED === 'function' ? onFULFILLED : () => { };
             onREJECTED = typeof onREJECTED === 'function' ? onREJECTED : () => { };
-            if (this.status === Commitment.PEDNING) {
+            if (this.status === Commitment.PENDING) {
                 this.resolveCallbacks.push(onFULFILLED);
                 this.rejectCallbacks.push(onREJECTED);
             }
