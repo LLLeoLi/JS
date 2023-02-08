@@ -12,3 +12,6 @@ plainObject.__proto__ = "test";
 for (let key in plainObject) {
     console.log(key); // "apple"，然后是 "__proto__"
 }
+// git add . 记录更改
+// git commit  提交更改到本地
+// git push 上传
