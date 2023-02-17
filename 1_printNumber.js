@@ -22,3 +22,4 @@ function printNumber_1(from, to) {
 }
 // 方案2可以动态修改下一次的延迟，两次调用的间隔也更加精准(以结束时间计)
 printNumber(5, 10);
+//
