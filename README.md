@@ -6,5 +6,5 @@
 2. [技术蛋老师](https://space.bilibili.com/327247876)
 3. [稀土掘金](https://juejin.cn/)的一些博客
 
-部分练习使用了浏览器相关API，不支持DOM，故添加了index.html方便演示效果。
+部分练习使用了浏览器相关API，不支持Node，故添加了index.html方便演示效果。
 
