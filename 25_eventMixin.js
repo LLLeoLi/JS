@@ -41,9 +41,11 @@ Object.assign(Menu.prototype, eventMixin);
 let menu = new Menu();
 
 // 添加一个事件处理程序（handler），在被选择时被调用：
-const select = value => console.log(`Value selected: ${value}`);
-menu.on("select", select);
+const select1 = value => console.log(`Value selected1: ${value}`);
+const select2 = value => console.log(`Value selected2: ${value}`);
+menu.on("select", select1);
+menu.on("select", select2);
 menu.choose("123");
 
-menu.off("select", select);
+menu.off("select", select1);
 menu.choose("1234");
