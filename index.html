@@ -40,6 +40,39 @@
         <!-- Vue2响应式原理 -->
         <div id="app"></div>
         <button id="btn"> 点击切换 </button>
+        <fieldset>
+            <legend>学生情况登记</legend>
+            <p>年龄：<input type="text" name="age" autofocus></p>
+            <p>性别：<input type="text" name="gender"></p>
+            <input type="email" size="40" list="defaultEmails">
+            <datalist id="defaultEmails">
+            <option value="jbond007@mi6.defence.gov.uk">
+            <option value="jbourne@unknown.net">
+            <option value="nfury@shield.org">
+            <option value="tony@starkindustries.com">
+            <option value="hulk@grrrrrrrr.arg">
+            </datalist>
+        </fieldset>
+        <input type="range" list="tickmarks">
+        <datalist id="tickmarks">
+            <option value="0" label="0%">
+            <option value="10">
+            <option value="20">
+            <option value="30">
+            <option value="40">
+            <option value="50" label="50%">
+            <option value="60">
+            <option value="70">
+            <option value="80">
+            <option value="90">
+            <option value="100" label="100%">
+        </datalist>
+        <input type="date" id="start" name="start"
+       value="2018-07-22"
+       min="2018-01-01" max="2023-12-31">
+       <progress id="file" max="100" value="70"> 70% </progress>
+       <p>烤箱的当前温度是<meter min="200" max="500"
+        value="350"> 350 度</meter>。</p>
     </header>
 </body>
 <script src="./11_Vue2EasyReactivity.js"></script>
